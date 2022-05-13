@@ -33,7 +33,7 @@ import com.repository.UserRepository;
 @CrossOrigin("*")
 public class UserController {
 	
-	
+	//FLIGHT
 	@Autowired
 	private FlightsRepository flightsRepo;
 	
@@ -68,7 +68,7 @@ public class UserController {
 	}
 	
 	
-	
+	//USER
 	@Autowired
 	private UserRepository userRepo;
 	
@@ -90,7 +90,7 @@ public class UserController {
 		return userRepo.save(user);
 	}
 	
-	
+	//OFFER
 	@Autowired
 	private OffersRepository offerRepo;
 	
@@ -124,7 +124,7 @@ public class UserController {
 	}
 	
 	
-	
+	//FEEDBACK
 	@Autowired
 	private FeedbackRepository feedRepo;
 	
@@ -141,7 +141,7 @@ public class UserController {
 	}
 	
 	
-	
+	//PROMOTION 
 	@Autowired
 	private PromotionRepository promoRepo;
 	
@@ -175,44 +175,4 @@ public class UserController {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	@Autowired
-	private UserRepository eRepo;
-	
-	@GetMapping("/employees")
-	public List<User> getAllEmployees() {
-		return eRepo.findAll();
-	}
-	
-	@GetMapping("/employees/{id}")
-	public User getEmployeeById(@PathVariable Long id) {
-		return eRepo.findById(id).get();
-	}
-	
-	@PostMapping("/employees")
-	public User saveEmployeeDetails(@RequestBody User employee) {
-		return eRepo.save(employee);
-	}
-	
-	@PutMapping("/employees")
-	public User updateEmployee(@RequestBody User employee) {
-		return eRepo.save(employee);
-	}
-	
-	@DeleteMapping("/employees/{id}")
-	public ResponseEntity<HttpStatus> deleteEmployeeById(@PathVariable Long id) {
-		eRepo.deleteById(id);
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	}
 }
